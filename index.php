@@ -22,13 +22,13 @@ class index{
         }
 
         if (!method_exists($this, $action)) {
-            $this->_out([], 3, 'ĞĞÎª²ÎÊı´íÎó');
+            $this->_out([], 3, 'è¯·æ±‚æ–¹æ³•ä¸å­˜åœ¨');
         }
         return $this->$action();
     }
 
     /**
-     * »ñÈ¡²ÎÊı
+     * è·å–å‚æ•°
      *
      * @param      $key
      * @param null $default
@@ -44,7 +44,7 @@ class index{
     }
 
     /**
-     * Êä³ö½á¹û
+     * å†…å®¹è¾“å‡º
      *
      * @param array  $data
      * @param int    $code
@@ -63,11 +63,11 @@ class index{
     }
 
     /**
-     * ¼ÇÂ¼²éÑ¯
+     * dnsè®°å½•æŸ¥è¯¢
      *
      * @param string $dns dns '223.5.5.5
-     * @param string $domain ²éÑ¯ÓòÃû
-     * @param string $type   ²éÑ¯ÀàĞÍ
+     * @param string $domain è¯·æ±‚åŸŸå
+     * @param string $type   è¯·æ±‚ç±»å‹
      *
      * @return null
      */
@@ -75,7 +75,7 @@ class index{
     {
         $dnsServer = isset($_GET['dns']) ? $_GET['dns']:'223.5.5.5';
         if (!isset($_GET['domain'])) {
-            $this->_out([], 1, 'ÓòÃû²ÎÊı²»ÄÜÎª¿Õ');
+            $this->_out([], 1, 'è¯·æ±‚åŸŸåä¸èƒ½ä¸ºç©º');
         }
         $domain = $_GET['domain'];
         $queryType = isset($_GET['type']) ? $_GET['type']:'A';
