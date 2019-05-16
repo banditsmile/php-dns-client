@@ -73,7 +73,6 @@ class index{
      */
     public function query()
     {
-        $data = array('code'=>0, 'msg'=>'ok');
         $dnsServer = isset($_GET['dns']) ? $_GET['dns']:'223.5.5.5';
         if (!isset($_GET['domain'])) {
             $this->_out([], 1, '域名参数不能为空');
@@ -89,6 +88,7 @@ class index{
             $this->_out([], 2, $e->getMessage());
         }
 
+        $data = [];
         /* @var $result Metaregistrar\DNS\dnsResponse */
         foreach ($result->getResourceResults() as $resource) {
             if ($resource instanceof Metaregistrar\DNS\dnsAresult) {
@@ -120,4 +120,5 @@ class index{
         $this->_out($ns);
     }
 }
+!isset($argv) && $argv=[];
 $instance = new index($argv);
