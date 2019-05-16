@@ -6,15 +6,7 @@ $conf = [
     'recordUrl' =>'https://dns.series.ink/index.php?a=query&dns=%s&domain=%s&type=%s',//域名解析记录查询接口
     'dnsTpl' =>'https://%s:%s@dyn.dns.he.net/nic/update?hostname=%s&myip=%s',//域名记录更新接口
     'names'=>[
-        ['name'=>'series.ink','key'=>'xlh!@#$1234','ns'=>'ns1.he.net'],
-        ['name'=>'www.series.ink','key'=>'xlh!@#$1234','ns'=>'ns1.he.net'],
-        ['name'=>'dns.series.ink','key'=>'xlh!@#$1234','ns'=>'ns1.he.net'],
-        ['name'=>'home.series.ink','key'=>'xlh!@#$1234','ns'=>'ns1.he.net'],
-        ['name'=>'cloud.series.ink','key'=>'xlh!@#$1234','ns'=>'ns1.he.net'],
-        ['name'=>'nextcloud.series.ink','key'=>'xlh!@#$1234','ns'=>'ns1.he.net'],
-
-        ['name'=>'classic.ink','key'=>'xlh!@#$1234','ns'=>'ns1.he.net'],
-        ['name'=>'www.classic.ink','key'=>'xlh!@#$1234','ns'=>'ns1.he.net'],
+        ['name'=>'series.ink','key'=>'你的ddns密钥','ns'=>'ns1.he.net'],
     ],
 ];
 
