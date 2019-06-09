@@ -40,7 +40,27 @@ foreach ($conf['names'] as $v) {
     }
 
     $url = sprintf($conf['dnsTpl'], $v['name'], $v['key'], $v['name'], $localIp);
-    $ret=file_get_contents($url);
+    $ret=get($url);
     echo $ret,PHP_EOL;
 }
 exit(0);
+
+function get($url, array $get = NULL, array $options = array())
+{
+    $url = $url. (strpos($url,  '?') === false ? '?' : ''). http_build_query($get);
+    $defaults = array(
+        CURLOPT_URL => $url,
+        CURLOPT_HEADER => 0,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_TIMEOUT => 4
+    );
+
+    $ch = curl_init();
+    curl_setopt_array($ch, ($options + $defaults));
+    if (!$result = curl_exec($ch)) {
+        trigger_error(curl_error($ch));
+    }
+    curl_close($ch);
+    return $result;
+}
+?>
